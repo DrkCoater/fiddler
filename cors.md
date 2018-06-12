@@ -1,3 +1,9 @@
+- Add the following to the head portion of the Fiddler script:
+```js
+public static RulesOption("Force CORS")
+var m_ForceCORS: boolean = true;
+```
+
 - Add the following at the end of the `OnBeforeResponse` method:
 ```js
 if (m_ForceCORS && oSession.oRequest.headers.Exists("Origin")) { 
